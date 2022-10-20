@@ -16,7 +16,7 @@ select khach_hang.ma_khach_hang,khach_hang.ho_ten,COUNT(hop_dong.ma_khach_hang) 
 --  cho tất cả các khách hàng đã từng đặt phòng. (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
 
     select khach_hang.ma_khach_hang,khach_hang.ho_ten,loai_khach.ten_loai_khach,hop_dong.ma_hop_dong,dich_vu.ten_dich_vu,
-hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc,(ifnull(dich_vu.chi_phi_thue,0)+ifnull(hop_dong_chi_tiet.so_luong,0)*ifnull(dich_vu_di_kem.gia,0)) as tong_tien
+hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc,(ifnull(dich_vu.chi_phi_thue,0) + ifnull(hop_dong_chi_tiet.so_luong,0)*ifnull(dich_vu_di_kem.gia,0)) as tong_tien
 from khach_hang join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
 				left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
 				left join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
@@ -26,38 +26,49 @@ group by hop_dong.ma_hop_dong
 order by khach_hang.ma_khach_hang;
 -- 6.	Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu của tất cả các loại dịch vụ 
 -- chưa từng được khách hàng thực hiện đặt từ quý 1 của năm 2021 (Quý 1 là tháng 1, 2, 3).
-
 select dich_vu.ma_dich_vu, dich_vu.ten_dich_vu,dich_vu.dien_tich,dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu 
 	from dich_vu join loai_dich_vu on dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
 	WHERE dich_vu.ma_dich_vu not in (select hop_dong.ma_dich_vu from hop_dong where hop_dong.ngay_lam_hop_dong between '2021-01-01' and '2021-03-31');
 
 -- 7 Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu 
 -- của tất cả các loại dịch vụ đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021.
-
 select dich_vu.ma_dich_vu, dich_vu.ten_dich_vu,dich_vu.dien_tich,dich_vu.so_nguoi_toi_da, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu 
 from dich_vu join loai_dich_vu on dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
-where dich_vu.ma_dich_vu in (select hop_dong.ma_dich_vu from hop_dong where hop_dong.ngay_lam_hop_dong BETWEEN'2020-01-00' AND '2020-12-31') AND dich_vu.ma_dich_vu NOT IN (
+where dich_vu.ma_dich_vu in (select hop_dong.ma_dich_vu from hop_dong where hop_dong.ngay_lam_hop_dong between '2020-01-00' and '2020-12-31') and dich_vu.ma_dich_vu NOT IN (
 							 select hop_dong.ma_dich_vu from hop_dong where hop_dong.ngay_lam_hop_dong > '2020-12-31');
                              
--- 8 8.	Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
-        -- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên.
-
+-- 8.	Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
+-- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên.
 select ho_ten from khach_hang
 group by ho_ten;
 select distinct ho_ten from khach_hang;
-select ho_ten from khach_hang a
-union
-select ho_ten from khach_hang b;
+select ho_ten from khach_hang union select ho_ten from khach_hang;
+
 
 -- 9 Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
 select month(ngay_lam_hop_dong) as thang, count(ma_hop_dong) 
-from hop_dong where year(ngay_lam_hop_dong) = 2021
+from hop_dong 
+where year(ngay_lam_hop_dong) = 2021
 group by thang
 order by thang;
+
 
 -- 10 Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm.
 -- (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
 --  Kết quả hiển thị bao gồm ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem 
 select hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc, hop_dong.tien_dat_coc, sum(ifnull(hop_dong_chi_tiet.so_luong,0))
-from hop_dong left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
-group by hop_dong.ma_hop_dong;	
+from hop_dong
+			left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+group by hop_dong.ma_hop_dong;
+
+-- 11.	Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách hàng có ten_loai_khach là “Diamond” và có dia_chi ở “Vinh” hoặc “Quảng Ngãi”.
+
+          
+
+
+
+
+
+
+
+        
