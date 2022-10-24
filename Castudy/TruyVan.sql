@@ -111,7 +111,31 @@ from nhan_vien join trinh_do on nhan_vien.ma_trinh_do = trinh_do.ma_trinh_do
                join hop_dong on nhan_vien.ma_nhan_vien = hop_dong.ma_nhan_vien
 where (hop_dong.ngay_lam_hop_dong between '2020-01-01' and '2021-12-31')
 group by nhan_vien.ma_nhan_vien
-having count(hop_dong.ma_nhan_vien) 
+having count(hop_dong.ma_nhan_vien); 
+
+-- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
+	create view nhan_vien_that_bai as
+select nhan_vien.ma_nhan_vien 
+from nhan_vien
+where nhan_vien.ma_nhan_vien not in (select hop_dong.ma_nhan_vien 
+									 from hop_dong
+                                     where hop_dong.ngay_lam_hop_dong between '2019-01-01' and '2021-12-31'
+                                     group by hop_dong.ma_nhan_vien);
+													
+delete nhan_vien from nhan_vien join nhan_vien_that_bai on nhan_vien.ma_nhan_vien = nhan_vien_that_bai.ma_nhan_vien;
+
+
+-- Task 18	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
+SET FOREIGN_KEY_CHECKS=0;
+DELETE FROM khach_hang
+WHERE khach_hang.ma_khach_hang IN (SELECT hop_dong.ma_khach_hang FROM hop_dong WHERE (YEAR(hop_dong.ngay_lam_hop_dong) < 2021 ));
+
+
+-- Task 20	Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống,
+ -- thông tin hiển thị bao gồm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
+SELECT nhan_vien.ma_nhan_vien,nhan_vien.ho_ten,nhan_vien.email,nhan_vien.so_dien_thoai,nhan_vien.ngay_sinh,nhan_vien.dia_chi FROM nhan_vien
+UNION ALL
+SELECT khach_hang.ma_khach_hang,khach_hang.ho_ten,khach_hang.email,khach_hang.so_dien_thoai,khach_hang.ngay_sinh,khach_hang.dia_chi FROM khach_hang;
 
 
 
