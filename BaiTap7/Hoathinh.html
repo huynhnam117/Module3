@@ -1,0 +1,177 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, serif;
+    padding: 10px;
+    background: #f1f1f1;
+    height: 100%;
+}
+
+
+.header {
+    color: white;
+    padding: 30px;
+    text-align: center;
+    background-image: url(https://hinhanhdep.vn/wp-content/uploads/2019/05/hinh-nen-dota2-dep-19-min.jpg)
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+.doraemon {
+    
+    width: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+}
+
+.conan {
+   
+    width: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.cat {
+
+    width: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #333;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+
+    </style>
+ </head>
+ <body>
+    <div class="header">
+        
+        <h1 style="color: #ddd; font-style: calc();">Thế Giới Hoạt Hình</h1>
+        <p style="color: #ddd;">--Chúa tể hoạt hình, chiến thần phim trẻ em--</p>
+    </div>
+    
+    <div class="topnav">
+        <a href="#">Mới nhất</a>
+        <a href="#">Xem nhiều</a>
+        <a href="#">Thể loại</a>
+        <a href="#">Về chúng tôi</a>
+        <a href="#" style="float:right">Đăng nhập</a>
+    </div>
+    
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2 style="font-style: unset;">Doremon "Mèo máy đến từ tương lai"</h2>
+               
+                <div class="doraemon" style="height:300px; margin-bottom: 100px;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6OVr_CHz4hw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3>[S9] Tuyển Tập Hoạt Hình Doraemon Phần 16 - Trọn Bộ Hoạt Hình Doraemon Lồng Tiếng Viêt</h3>
+            </div>
+            <div class="card">
+                <h2>Conan "Thám tử lừng danh"</h2>
+                <div class="conan" style="height:200px; margin-bottom: 200px;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z6yk7tlNs5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3>Thám Tử Lừng Danh Conan - Kaito Kid Với Két Sắt Tanuki - Detective Conan Tổng Hợp</h3>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>One Piece "Đảo hải tặc"</h2>
+                <div class="cat" style="height: 200%; margin-right: auto;">
+                    <iframe width="300" height="200" src="https://www.youtube.com/embed/Hpmnd4azsfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3>One Piece Tập 493 - Luffy Và Ace. Cuộc Gặp Gỡ Của Những Người Anh Em! - Đảo Hải Tặc</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h1 style="color:#ddd ;">footer</h1>
+    </div>
+ </body>
+ </html>
