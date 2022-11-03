@@ -15,12 +15,12 @@
 <form action="/resul" method="get">
 <div>
     <p>Product Description</p>
-    <input type="text" name="ProductDescription">
+    <input type="text" name="ProductDescription2">
     <p>List Price</p>
     <input type="text" name="ListPrice">
     <p>Discount Percent</p>
     <input type="text" name="DiscountPercent">
-    <br>
+    <br><br>
     <button type="submit">submit</button>
 </div>
 </form>
