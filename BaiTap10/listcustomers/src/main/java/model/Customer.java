@@ -3,21 +3,21 @@ package model;
 public class Customer {
     private int id;
     private String name;
-    private String BirthDay;
+    private String birthDay;
     private String address;
-    private String Email;
-    private String Image;
+    private String email;
+    private String image;
 
     public Customer() {
     }
 
-    public Customer(int id, String name, String birthDay, String address, String Email, String Image) {
+    public Customer(int id, String name, String birthDay, String address, String email, String image) {
         this.id = id;
         this.name = name;
-        this.BirthDay = birthDay;
+        this.birthDay = birthDay;
         this.address = address;
-        this.Email = Email;
-        this.Image = Image;
+        this.email = email;
+        this.image = image;
     }
 
     public int getId() {
@@ -37,11 +37,11 @@ public class Customer {
     }
 
     public String getBirthDay() {
-        return BirthDay;
+        return birthDay;
     }
 
     public void setBirthDay(String birthDay) {
-        BirthDay = birthDay;
+        birthDay = birthDay;
     }
 
     public String getAddress() {
@@ -53,18 +53,18 @@ public class Customer {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        email = email;
     }
 
     public String getImage() {
-        return Image;
+        return image;
     }
 
     public void setImage(String image) {
-        Image = image;
+        image = image;
     }
 }
