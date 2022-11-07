@@ -109,10 +109,10 @@
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
-                <li><a href="/customer">Customer</a></li>
-                <li><a href="/employee">Employee</a></li>
-                <li><a href="/contract">Contract</a></li>
-                <li><a href="/service">Service</a></li>
+                <li><a href="/view/Customer/list.jsp">Customer</a></li>
+                <li><a href="/view/Employee/list.jsp">Employee</a></li>
+                <li><a href="/view/Facility/list.jsp">Facility</a></li>
+                <li><a href="/view/Contract/list.jsp">Contract</a></li>
                 <li><a href="home.html" class="active">Log in</a></li>
             </ul>
         </nav>

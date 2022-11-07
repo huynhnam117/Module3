@@ -41,99 +41,110 @@
     </tr>
     </thead>
     <tbody>
-<%--    <tr>--%>
-<%--        <th scope="row">1</th>--%>
-<%--        <td>Nguyễn Văn A</td>--%>
-<%--        <td>04/1/2001</td>--%>
-<%--        <td>Nam</td>--%>
-<%--        <td>812345678</td>--%>
-<%--        <td>0123456789</td>--%>
-<%--        <td>VanA@gmail.com</td>--%>
-<%--        <td>Tp-Hà Tĩnh</td>--%>
+    <tr>
+        <th scope="row">1</th>
+        <td>Nguyễn Văn A</td>
+        <td>23.3</td>
+        <td>363.3</td>
+        <td>3</td>
+        <td>5</td>
+        <td>null</td>
+        <td>200.0</td>
+        <td>9</td>
+        <td>12</td>
+        <td>23</td>
+        <td>13</td>
+        <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>
+        <td>
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel1">Bạn Có Chắc Chắn Muốn Xóa Không?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>Nguyễn Văn B</td>
+        <td>23.3</td>
+        <td>363.3</td>
+        <td>3</td>
+        <td>5</td>
+        <td>null</td>
+        <td>200.0</td>
+        <td>9</td>
+        <td>12</td>
+        <td>23</td>
+        <td>13</td>
 
-<%--        <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>--%>
-<%--        <td>--%>
-<%--            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">--%>
-<%--                Delete--%>
-<%--            </button>--%>
-<%--            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">--%>
-<%--                <div class="modal-dialog">--%>
-<%--                    <div class="modal-content">--%>
-<%--                        <div class="modal-header">--%>
-<%--                            <h5 class="modal-title" id="exampleModalLabel1">Bạn Có Chắc Chắn Muốn Xóa Không?</h5>--%>
-<%--                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--%>
-<%--                        </div>--%>
-<%--                        <div class="modal-footer">--%>
-<%--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--%>
-<%--                            <button type="button" class="btn btn-primary">Save changes</button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--        <th scope="row">2</th>--%>
-<%--        <td>Nguyễn Văn B</td>--%>
-<%--        <td>04/1/2001</td>--%>
-<%--        <td>Nam</td>--%>
-<%--        <td>812345678</td>--%>
-<%--        <td>0123456789</td>--%>
-<%--        <td>VanB@gmail.com</td>--%>
-<%--        <td>Tp-Hà Tĩnh</td>--%>
+        <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>
+        <td>
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel2">Bạn Có Chắc Chắn Muốn Xóa Không?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td>Nguyễn Văn C</td>
+        <td>23.3</td>
+        <td>363.3</td>
+        <td>3</td>
+        <td>5</td>
+        <td>null</td>
+        <td>200.0</td>
+        <td>9</td>
+        <td>12</td>
+        <td>23</td>
+        <td>13</td>
 
-<%--        <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>--%>
-<%--        <td>--%>
-<%--            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">--%>
-<%--                Delete--%>
-<%--            </button>--%>
-<%--            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">--%>
-<%--                <div class="modal-dialog">--%>
-<%--                    <div class="modal-content">--%>
-<%--                        <div class="modal-header">--%>
-<%--                            <h5 class="modal-title" id="exampleModalLabel2">Bạn Có Chắc Chắn Muốn Xóa Không?</h5>--%>
-<%--                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--%>
-<%--                        </div>--%>
-<%--                        <div class="modal-footer">--%>
-<%--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--%>
-<%--                            <button type="button" class="btn btn-primary">Save changes</button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--        <th scope="row">3</th>--%>
-<%--        <td>Nguyễn Văn C</td>--%>
-<%--        <td>11/1/1987</td>--%>
-<%--        <td>nữ</td>--%>
-<%--        <td>812345678</td>--%>
-<%--        <td>0123456789</td>--%>
-<%--        <td>VanC@gmail.com</td>--%>
-<%--        <td>Tp-Hà Tĩnh</td>--%>
-
-<%--        <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>--%>
-<%--        <td>--%>
-<%--            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">--%>
-<%--                Delete--%>
-<%--            </button>--%>
-<%--            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">--%>
-<%--                <div class="modal-dialog">--%>
-<%--                    <div class="modal-content">--%>
-<%--                        <div class="modal-header">--%>
-<%--                            <h5 class="modal-title" id="exampleModalLabel">Bạn Có Chắc Chắn Muốn Xóa Không?</h5>--%>
-<%--                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--%>
-<%--                        </div>--%>
-<%--                        <div class="modal-footer">--%>
-<%--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--%>
-<%--                            <button type="button" class="btn btn-primary">Save changes</button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </td>--%>
-<%--    </tr>--%>
+        <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>
+        <td>
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Bạn Có Chắc Chắn Muốn Xóa Không?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
 
     </tbody>
 </table>
