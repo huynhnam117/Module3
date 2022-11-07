@@ -14,26 +14,29 @@
 </head>
 <body>
 <h1 class="fw-light" style="text-align: center">Trang Danh Sách Sản Phẩm</h1>
-<a href="/Product?action=add"><button type="button" class="btn btn-outline-primary" style="margin-left: 20px">+Add Product</button></a>
-<table class="table table-striped table-hover">
+<a href="/Product?action=add">Add new product</a>
+<a href="/Product?action=find">Find product</a>
+<table class="table table-dark">
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Price</th>
-        <th>Describe</th>
-        <th>Producer</th>
+        <th>Description</th>
+        <th>Manufacturer</th>
         <th>Edit</th>
         <th>Delete</th>
+        <th>View details</th>
     </tr>
-    <c:forEach var="Product" items="${productList}" varStatus="status">
+    <c:forEach var="x" items="${products}" varStatus="index">
         <tr>
-            <td>${status.count}</td>
-            <td>${Product.getName()}</td>
-            <td>${Product.getPrice()}</td>
-            <td>${Product.getDescribe()}</td>
-            <td>${Product.getProducer()}</td>
-            <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>
-            <td> <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></td>
+            <td>${x.getId()}</td>
+            <td>${x.getName()}</td>
+            <td>${x.getPrice()}</td>
+            <td>${x.getDescription()}</td>
+            <td>${x.getManufacturer()}</td>
+            <td><a href="/Product?action=edit&id=${x.getId()}">Edit</a></td>
+            <td><a href="/Product?action=delete&id=${x.getId()}">Delete</a></td>
+            <td><a href="/Product?action=view&id=${x.getId()}">View</a></td>
         </tr>
     </c:forEach>
 </table>

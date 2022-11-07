@@ -13,23 +13,56 @@ public class ProductRepository implements IProductRepository {
         listProduct.add(new Product(3, "Đường", 12.000, "bịch vừa", "Null"));
         listProduct.add(new Product(4, "Nước Rửa Chén", 24.000, "Bình nhỏ", "Omo"));
     }
-    @Override
-    public List<Product> finAll() {
-        return listProduct;
-    }
 
     @Override
-    public void add(Product product) {
+    public void addProduct(Product product) {
         listProduct.add(product);
     }
 
     @Override
-    public void delete(int id) {
-        listProduct.remove(id);
+    public void editProduct(int id, String value, int parameter) {
+        switch (parameter) {
+            case 1:
+                listProduct.get(id - 1).setName(value);
+                break;
+            case 2:
+                double newPrice = Double.parseDouble(value);
+                listProduct.get(id - 1).setPrice(newPrice);
+                break;
+            case 3:
+                listProduct.get(id - 1).setDescribe(value);
+                break;
+            case 4:
+                listProduct.get(id - 1).setProducer(value);
+                break;
+        }
     }
 
     @Override
-    public Product findById(int id) {
-        return listProduct.get(id);
+    public void deleteProduct(int id) {
+        listProduct.remove(id - 1);
     }
-}
+
+    @Override
+    public void viewProduct(int id) {
+
+    }
+
+    @Override
+    public List<Product> getProducts() {
+        return listProduct;
+    }
+
+    @Override
+    public List<Product> findByName(String name) {
+        List<Product> productsFound = new ArrayList<>();
+
+        for (Product x : listProduct) {
+            if (x.getName().contains(name)) {
+                productsFound.add(x);
+            }
+        }
+        return productsFound;
+    }
+    }
+

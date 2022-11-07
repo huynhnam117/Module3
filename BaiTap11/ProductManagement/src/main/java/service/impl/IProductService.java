@@ -6,14 +6,15 @@ import model.Product;
 import java.util.List;
 
 public interface IProductService {
-List<Product> finAll();
+    void addProduct(Product product);
 
-void add(Product product);
+    void editProduct(int id, String value, int parameter);
 
-void delete(int id);
+    void deleteProduct(int id);
 
-Product findById(int id);
+    void viewProduct(int id);
 
+    List<Product> findByName(String name);
 
-void update(int id, Product product);
+    List<Product> getProducts();
 }

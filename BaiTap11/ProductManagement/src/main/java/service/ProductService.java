@@ -8,26 +8,35 @@ import java.util.List;
 
 public class ProductService implements IProductService {
 private IProductRepository productRepository = new ProductRepository();
+
+
     @Override
-    public List<Product> finAll() {
-        return productRepository.finAll();
+    public void addProduct(Product product) {
+productRepository.addProduct(product);
     }
 
     @Override
-    public void add(Product product) {
-         productRepository.add(product);
+    public void editProduct(int id, String value, int parameter) {
+        productRepository.editProduct(id, value, parameter);
     }
 
     @Override
-    public void delete(int id) {
-        productRepository.delete(id);
+    public void deleteProduct(int id) {
+productRepository.deleteProduct(id);
+    }
+
+    @Override
+    public void viewProduct(int id) {
 
     }
 
     @Override
-    public Product findById(int id) {
-        return productRepository.findById(id);
+    public List<Product> findByName(String name) {
+        return productRepository.findByName(name);
     }
 
-
+    @Override
+    public List<Product> getProducts() {
+        return productRepository.getProducts();
+    }
 }
