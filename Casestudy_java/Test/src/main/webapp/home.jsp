@@ -22,7 +22,7 @@
         height: 100%;
     }
     header{
-        background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&w=1200);
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&w=1200);
         height: 100vh;
         background-size: cover;
         background-position: center;
@@ -109,10 +109,10 @@
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
-                <li><a href="/view/Customer/list.jsp">Customer</a></li>
-                <li><a href="/view/Employee/list.jsp">Employee</a></li>
-                <li><a href="/view/Facility/list.jsp">Facility</a></li>
-                <li><a href="/view/Contract/list.jsp">Contract</a></li>
+                <li><a href="/customer">Customer</a></li>
+                <li><a href="/employee">Employee</a></li>
+                <li><a href="/contract">Contract</a></li>
+                <li><a href="/service">Service</a></li>
                 <li><a href="home.html" class="active">Log in</a></li>
             </ul>
         </nav>
@@ -121,7 +121,7 @@
         <p>Welcome to...</p>
         <h1>FURAMA</h1>
         <span></span>
-        <p>Overlooking the long stretch of wide white sand on Danang Beach, <br> Furama Resort Danang is a gateway to three World Heritage Sites of Hoi An, My Son and Hue. </p>
+        <p>This is the place to enjoy life <br>You can also experience premium services</p>
         <br>
         <input type="button" class="btn" value="ORDER NOW">
     </div>

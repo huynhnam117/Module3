@@ -6,130 +6,121 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
 </head>
+<style>
+    body {
+        background-color: white;
+    }
+    table {
+        border: solid 3px;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
 <body>
-<h1 class="fw-light" style="text-align: center">List Customer.</h1>
-<p class="text-center mt-3"><a href="/"><i class="fa-solid fa-house-chimney h5 mx-1"></i>Back HOME</a></p>
-<button type="button" class="btn btn-outline-primary">+Add Customer</button>
-<form class="d-flex" role="search" style="margin-left: 1360px">
-
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Date Of Brith</th>
-        <th scope="col">Gender</th>
-        <th scope="col">ID Card</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Email</th>
-        <th scope="col">Address</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Nguyễn Văn A</td>
-        <td>04/1/2001</td>
-        <td>Nam</td>
-        <td>812345678</td>
-        <td>0123456789</td>
-        <td>VanA@gmail.com</td>
-        <td>Tp-Hà Tĩnh</td>
-
-        <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>
-        <td>
-            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Delete
-            </button>
-            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel1">Bạn Có Chắc Chắn Muốn Xóa Không?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
+<div class="p-3">
+    <h2 class="text-center fw-bold">list Customer</h2>
+    <p class="text-center mt-3"><a href="/"><i></i> Back to HOME</a></p>
+    <c:if test="${mess!=null}">
+        <c:if test="${check}">
+            <div class="justify-content-center d-flex">
+                <div class="alert alert-success alert-dismissible fade show w-50 text-center">
+                    <strong>${mess}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
             </div>
-        </td>
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Nguyễn Văn B</td>
-        <td>04/1/2001</td>
-        <td>Nam</td>
-        <td>812345678</td>
-        <td>0123456789</td>
-        <td>VanB@gmail.com</td>
-        <td>Tp-Hà Tĩnh</td>
+        </c:if>
 
-        <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>
-        <td>
-            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Delete
-            </button>
-            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel2">Bạn Có Chắc Chắn Muốn Xóa Không?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
+        <c:if test="${!check}">
+            <div class="justify-content-center d-flex">
+                <div class="alert alert-danger alert-dismissible fade show w-50 text-center">
+                    <strong>${mess}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
             </div>
-        </td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>Nguyễn Văn C</td>
-        <td>11/1/1987</td>
-        <td>nữ</td>
-        <td>812345678</td>
-        <td>0123456789</td>
-        <td>VanC@gmail.com</td>
-        <td>Tp-Hà Tĩnh</td>
+        </c:if>
+    </c:if>
 
-        <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit </button></td>
-        <td>
-            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Bạn Có Chắc Chắn Muốn Xóa Không?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </td>
-    </tr>
+<%--           thêm--%>
+    <nav class="navbar navbar-expand-lg py-0 my-0">
+        <div class="container-fluid">
+            <a href="/customer?action=create">
+                <button class="btn btn-success btn-outline"><span class="text-light"> + Add Customer</span></button>
+            </a>
 
-    </tbody>
-</table>
+<%--            Tìm Kiếm--%>
+            <form class="d-flex my-2" role="search" action="/customer?action=search&name=${customer.getcustomerName()}" method="get">
+                <input class="form-control me-2" type="text" placeholder="" aria-label="Search"
+                       name="name">
+                <button class="btn btn-outline-success" type="submit" name="action" value="search">
+                    <i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </nav>
+<%--             Danh sách--%>
+    <table id="customerTable" class="table table-striped-columns">
+        <thead>
+        <tr>
+            <th>Stt</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Id card</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>customer_type_id</th>
+            <th class="text-center">Edit</th>
+            <th class="text-center">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach varStatus="status" var="customer" items="${customerList}">
+            <tr>
+                <td class="text-center">${status.count}</td>
+                <td>${customer.customerName}</td>
+                <td>${customer.customerBirthday}</td>
+                <c:if test="${customer.customerGender == 1}">
+                    <td>Male</td>
+                </c:if>
+                <c:if test="${customer.customerGender == 0}">
+                    <td>Female</td>
+                </c:if>
+                <td>${customer.customerIdCard}</td>
+                <td>${customer.customerPhone}</td>
+                <td>${customer.customerEmail}</td>
+                <td>${customer.customerAddress}</td>
+                <td>${customer.customerTypeId}</td>
+                    <%--  chỉnh sửa--%>
+                <td class="text-center">
+                    <a href="/customer?action=edit&id=${customer.getCustomerId()}">
+                        <button class="btn btn-outline-primary">Edit</button>
+                    </a>
+                </td>
+<%--                       Xóa--%>
+                <td class="text-center">
+                    <a href="/customer?action=delete&id=${customer.customerId}" data-bs-toggle="modal"
+                       data-bs-target="#exampleModal"
+                       onclick="deleteCustomer('${customer.getCustomerId()}','${customer.getCustomerName()}')">
+                        <button class="btn btn-outline-danger">Delete </button>
+                    </a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

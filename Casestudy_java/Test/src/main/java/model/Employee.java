@@ -1,130 +1,130 @@
 package model;
 
 public class Employee {
-private int Employeeid;
-private String Employeename;
-private String Employeedate_of_birth;
-private String Employeeid_card;
-private double Employeesalary;
-private int Employeephone;
-private String Employeeemail;
-private String Employeeaddress;
-private int Employeeposition_id;
-private int Employeeeducation_degree_id;
-private int Employeedivision_id;
-private String Employeeusername;
+    private int employeeId;
+    private String employeeName;
+    private String employeeDate_of_birth;
+    private String employeeId_card;
+    private double employeeSalary;
+    private int employeePhone;
+    private String employeeEmail;
+    private String employeeAddress;
+    private int employeePosition_id;
+    private int employeeEducation_degree_id;
+    private int employeeDivision_id;
+    private String employeeUsername;
 
     public Employee() {
     }
 
-    public Employee(int employeeid, String employeename, String employeedate_of_birth, String employeeid_card, double employeesalary, int employeephone, String employeeemail, String employeeaddress, int employeeposition_id, int employeeeducation_degree_id, int employeedivision_id, String employeeusername) {
-        Employeeid = employeeid;
-        Employeename = employeename;
-        Employeedate_of_birth = employeedate_of_birth;
-        Employeeid_card = employeeid_card;
-        Employeesalary = employeesalary;
-        Employeephone = employeephone;
-        Employeeemail = employeeemail;
-        Employeeaddress = employeeaddress;
-        Employeeposition_id = employeeposition_id;
-        Employeeeducation_degree_id = employeeeducation_degree_id;
-        Employeedivision_id = employeedivision_id;
-        Employeeusername = employeeusername;
+    public Employee(int employeeId, String employeeName, String employeeDate_of_birth, String employeeId_card, double employeeSalary, int employeePhone, String employeeEmail, String employeeAddress, int employeePosition_id, int employeeEducation_degree_id, int employeeDivision_id, String employeeUsername) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.employeeDate_of_birth = employeeDate_of_birth;
+        this.employeeId_card = employeeId_card;
+        this.employeeSalary = employeeSalary;
+        this.employeePhone = employeePhone;
+        this.employeeEmail = employeeEmail;
+        this.employeeAddress = employeeAddress;
+        this.employeePosition_id = employeePosition_id;
+        this.employeeEducation_degree_id = employeeEducation_degree_id;
+        this.employeeDivision_id = employeeDivision_id;
+        this.employeeUsername = employeeUsername;
     }
 
-    public int getEmployeeid() {
-        return Employeeid;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployeeid(int employeeid) {
-        Employeeid = employeeid;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public String getEmployeename() {
-        return Employeename;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setEmployeename(String employeename) {
-        Employeename = employeename;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
-    public String getEmployeedate_of_birth() {
-        return Employeedate_of_birth;
+    public String getEmployeeDate_of_birth() {
+        return employeeDate_of_birth;
     }
 
-    public void setEmployeedate_of_birth(String employeedate_of_birth) {
-        Employeedate_of_birth = employeedate_of_birth;
+    public void setEmployeeDate_of_birth(String employeeDate_of_birth) {
+        this.employeeDate_of_birth = employeeDate_of_birth;
     }
 
-    public String getEmployeeid_card() {
-        return Employeeid_card;
+    public String getEmployeeId_card() {
+        return employeeId_card;
     }
 
-    public void setEmployeeid_card(String employeeid_card) {
-        Employeeid_card = employeeid_card;
+    public void setEmployeeId_card(String employeeId_card) {
+        this.employeeId_card = employeeId_card;
     }
 
-    public double getEmployeesalary() {
-        return Employeesalary;
+    public double getEmployeeSalary() {
+        return employeeSalary;
     }
 
-    public void setEmployeesalary(double employeesalary) {
-        Employeesalary = employeesalary;
+    public void setEmployeeSalary(double employeeSalary) {
+        this.employeeSalary = employeeSalary;
     }
 
-    public int getEmployeephone() {
-        return Employeephone;
+    public int getEmployeePhone() {
+        return employeePhone;
     }
 
-    public void setEmployeephone(int employeephone) {
-        Employeephone = employeephone;
+    public void setEmployeePhone(int employeePhone) {
+        this.employeePhone = employeePhone;
     }
 
-    public String getEmployeeemail() {
-        return Employeeemail;
+    public String getEmployeeEmail() {
+        return employeeEmail;
     }
 
-    public void setEmployeeemail(String employeeemail) {
-        Employeeemail = employeeemail;
+    public void setEmployeeEmail(String employeeEmail) {
+        this.employeeEmail = employeeEmail;
     }
 
-    public String getEmployeeaddress() {
-        return Employeeaddress;
+    public String getEmployeeAddress() {
+        return employeeAddress;
     }
 
-    public void setEmployeeaddress(String employeeaddress) {
-        Employeeaddress = employeeaddress;
+    public void setEmployeeAddress(String employeeAddress) {
+        this.employeeAddress = employeeAddress;
     }
 
-    public int getEmployeeposition_id() {
-        return Employeeposition_id;
+    public int getEmployeePosition_id() {
+        return employeePosition_id;
     }
 
-    public void setEmployeeposition_id(int employeeposition_id) {
-        Employeeposition_id = employeeposition_id;
+    public void setEmployeePosition_id(int employeePosition_id) {
+        this.employeePosition_id = employeePosition_id;
     }
 
-    public int getEmployeeeducation_degree_id() {
-        return Employeeeducation_degree_id;
+    public int getEmployeeEducation_degree_id() {
+        return employeeEducation_degree_id;
     }
 
-    public void setEmployeeeducation_degree_id(int employeeeducation_degree_id) {
-        Employeeeducation_degree_id = employeeeducation_degree_id;
+    public void setEmployeeEducation_degree_id(int employeeEducation_degree_id) {
+        this.employeeEducation_degree_id = employeeEducation_degree_id;
     }
 
-    public int getEmployeedivision_id() {
-        return Employeedivision_id;
+    public int getEmployeeDivision_id() {
+        return employeeDivision_id;
     }
 
-    public void setEmployeedivision_id(int employeedivision_id) {
-        Employeedivision_id = employeedivision_id;
+    public void setEmployeeDivision_id(int employeeDivision_id) {
+        this.employeeDivision_id = employeeDivision_id;
     }
 
-    public String getEmployeeusername() {
-        return Employeeusername;
+    public String getEmployeeUsername() {
+        return employeeUsername;
     }
 
-    public void setEmployeeusername(String employeeusername) {
-        Employeeusername = employeeusername;
+    public void setEmployeeUsername(String employeeUsername) {
+        this.employeeUsername = employeeUsername;
     }
 }
