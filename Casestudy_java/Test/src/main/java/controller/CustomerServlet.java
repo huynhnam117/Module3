@@ -9,7 +9,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CustomerServlet", value = "/customer")
 public class CustomerServlet extends HttpServlet {
@@ -55,7 +57,9 @@ public class CustomerServlet extends HttpServlet {
     private void findAll(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/list.jsp");
         List<Customer> customerList = iCustomerService.findAll();
+        Map<Integer,String> mapCustomerType = iCustomerService.findAllCustomerType();
         request.setAttribute("customerList", customerList);
+        request.setAttribute("mapCustomerType",mapCustomerType);
         try {
             dispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
@@ -65,8 +69,7 @@ public class CustomerServlet extends HttpServlet {
 
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        boolean check = iCustomerService.delete(id);
-        request.setAttribute("check", check);
+        iCustomerService.delete(id);
         findAll(request, response);
     }
 
@@ -157,7 +160,6 @@ public class CustomerServlet extends HttpServlet {
         Customer customer = new Customer(name, dayOfBirth, gender, idCard, phone, email, address, customerType);
         boolean check = iCustomerService.create(customer);
         request.setAttribute("check", check);
-
         showCreateForm(request, response);
     }
 }

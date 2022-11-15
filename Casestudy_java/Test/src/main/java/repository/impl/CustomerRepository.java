@@ -8,7 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CustomerRepository implements ICustomerRepository {
     private static final String FIND_ALL = "SELECT * FROM castudy1.customer;";
@@ -16,7 +18,8 @@ public class CustomerRepository implements ICustomerRepository {
     private static final String FIND_BY_ID = "select * from customer where id = ?;";
     private static final String UPDATE = "update customer set name = ?, date_of_birth = ?,gender = ?, id_card = ?, phone_number = ?,email = ?, address = ?, customer_type_id = ? where id = ?;";
     private static final String DELETE = "DELETE FROM customer WHERE id = ?;";
-    private static final String SEARCH = "select * from customer where is_delete = 0 and name like ? and " + "address like ? and phone_number like ?;";
+    private static final String SEARCH = "select * from customer where is_delete = 0 and name like ?;";
+    private static final String SELECT_ALL_CUSTOMERTYPE="SELECT * FROM customer_type;";
 
     @Override
     public List<Customer> findAll() {
@@ -150,8 +153,24 @@ public class CustomerRepository implements ICustomerRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return customerList;
+    }
+
+    @Override
+    public Map<Integer, String> findAllCustomerType() {
+        Map<Integer,String> mapCustomerType = new HashMap<>();
+
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_CUSTOMERTYPE);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                mapCustomerType.put(resultSet.getInt("id"),resultSet.getString("name"));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return mapCustomerType;
     }
 }
 

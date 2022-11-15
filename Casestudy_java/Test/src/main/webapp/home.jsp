@@ -118,7 +118,7 @@
         </nav>
     </div>
     <div class="text">
-        <p>Welcome to...</p>
+        <p style="">Welcome to...</p>
         <h1>FURAMA</h1>
         <span></span>
         <p>This is the place to enjoy life <br>You can also experience premium services</p>
@@ -126,5 +126,6 @@
         <input type="button" class="btn" value="ORDER NOW">
     </div>
 </header>
+
 </body>
 </html>

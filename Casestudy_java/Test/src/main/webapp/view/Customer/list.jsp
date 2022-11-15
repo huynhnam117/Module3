@@ -42,7 +42,6 @@
                 </div>
             </div>
         </c:if>
-
         <c:if test="${!check}">
             <div class="justify-content-center d-flex">
                 <div class="alert alert-danger alert-dismissible fade show w-50 text-center">
@@ -59,10 +58,9 @@
             <a href="/customer?action=create">
                 <button class="btn btn-success btn-outline"><span class="text-light"> + Add Customer</span></button>
             </a>
-
 <%--            Tìm Kiếm--%>
-            <form class="d-flex my-2" role="search" action="/customer?action=search&name=${customer.getcustomerName()}" method="get">
-                <input class="form-control me-2" type="text" placeholder="" aria-label="Search"
+            <form class="d-flex my-2" role="search" action="/customer?action=search&name=${customer.getCustomerName()}" method="get">
+                <input class="form-control me-2" type="text" placeholder="input name" aria-label="Search"
                        name="name">
                 <button class="btn btn-outline-success" type="submit" name="action" value="search">
                     <i class="fa-solid fa-magnifying-glass"></i></button>
@@ -73,7 +71,7 @@
     <table id="customerTable" class="table table-striped-columns">
         <thead>
         <tr>
-            <th>Stt</th>
+            <th>No</th>
             <th>Name</th>
             <th>Birthday</th>
             <th>Gender</th>
@@ -81,7 +79,7 @@
             <th>Phone</th>
             <th>Email</th>
             <th>Address</th>
-            <th>customer_type_id</th>
+            <th>Customer type name</th>
             <th class="text-center">Edit</th>
             <th class="text-center">Delete</th>
         </tr>
@@ -102,7 +100,7 @@
                 <td>${customer.customerPhone}</td>
                 <td>${customer.customerEmail}</td>
                 <td>${customer.customerAddress}</td>
-                <td>${customer.customerTypeId}</td>
+                <td><c:out value="${mapCustomerType.get(customer.customerTypeId)}"/></td>
                     <%--  chỉnh sửa--%>
                 <td class="text-center">
                     <a href="/customer?action=edit&id=${customer.getCustomerId()}">
@@ -111,9 +109,7 @@
                 </td>
 <%--                       Xóa--%>
                 <td class="text-center">
-                    <a href="/customer?action=delete&id=${customer.customerId}" data-bs-toggle="modal"
-                       data-bs-target="#exampleModal"
-                       onclick="deleteCustomer('${customer.getCustomerId()}','${customer.getCustomerName()}')">
+                    <a href="/customer?action=delete&id=${customer.customerId}"onclick="deleteCustomer('${customer.getCustomerId()}','${customer.getCustomerName()}')">
                         <button class="btn btn-outline-danger">Delete </button>
                     </a>
                 </td>

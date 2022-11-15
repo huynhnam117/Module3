@@ -6,6 +6,7 @@ import repository.impl.CustomerRepository;
 import service.ICustomerService;
 
 import java.util.List;
+import java.util.Map;
 
 public class CustomerService implements ICustomerService {
     private ICustomerRepository iCustomerRepository = new CustomerRepository();
@@ -37,6 +38,11 @@ public class CustomerService implements ICustomerService {
     @Override
     public List<Customer> search(String nameSearch) {
         return iCustomerRepository.search(nameSearch);
+    }
+
+    @Override
+    public Map<Integer, String> findAllCustomerType() {
+        return iCustomerRepository.findAllCustomerType();
     }
 }
 

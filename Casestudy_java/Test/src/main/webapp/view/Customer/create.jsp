@@ -64,7 +64,6 @@
     </c:if>
 
     <div class="d-flex justify-content-center">
-
         <form class="w-50 border border-2 border-success p-3 rounded" action="/customer?action=create"
               method="post">
             <div class="form-group">

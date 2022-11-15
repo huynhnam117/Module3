@@ -66,7 +66,7 @@
                 <label for="name" class="h6">Name:</label>
                 <div class="input-group">
                     <input type="text" id="name" value="${customer.getCustomerName()}" class="form-control" placeholder="Input name" name="name" required >
-                    <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
+
                 </div>
             </div>
 
@@ -75,19 +75,21 @@
                 <input type="date" id="dateOfBirth" value="${customer.getCustomerBirthday()}" class="form-control" name="dateOfBirth" min="${minAge}"
                        max="${maxAge}">
             </div>
+
             <div class="mt-3 form-group">
                 <label class="h6">Gender:</label>
                 <div class="d-flex">
 <%--                    Nam--%>
                     <label class="d-block me-4">
-                        <input type="radio" value="1" name="gender" checked> Male
+                        <input name="gender" type="radio" value="1" ${customer.customerGender==1?"checked":""}>Male
                         <i class="fa-solid fa-mars"></i>
                     </label>
 <%--                        Nữ--%>
                     <label class="d-block">
-                        <input type="radio" value="0" name="gender"> Female
+                        <input name="gender" type="radio" value="0" ${customer.customerGender==0?"checked":""}>Female
                         <i class="fa-solid fa-venus"></i>
                     </label>
+
                 </div>
             </div>
 
@@ -95,14 +97,14 @@
                 <label for="idCard" class="h6">Id card:</label>
                 <div class="input-group">
                     <input type="text" id="idCard" value="${customer.getCustomerIdCard()}" class="form-control" placeholder="Input Id card" name="idCard">
-                    <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
+
                 </div>
             </div>
             <div class="mt-3 form-group">
                 <label for="phone" class="h6">Phone:</label>
                 <div class="input-group">
                     <input type="text" id="phone" value="${customer.getCustomerPhone()}" class="form-control" placeholder="Input Phone number" name="phone">
-                    <span class="input-group-text"><i class="fa-solid fa-square-phone"></i></span>
+
                 </div>
             </div>
 
@@ -110,7 +112,7 @@
                 <label for="email" class="h6">Email:</label>
                 <div class="input-group">
                     <input type="text" id="email" value="${customer.getCustomerEmail()}" class="form-control" placeholder="Input Email" name="email">
-                    <span class="input-group-text"><i class="fa-solid fa-envelope-circle-check"></i></span>
+
                 </div>
             </div>
 
@@ -118,26 +120,20 @@
                 <label for="address" class="h6">Address:</label>
                 <div class="input-group">
                     <input type="text" id="address" value="${customer.getCustomerAddress()}" class="form-control" placeholder="Input Address" name="address">
-                    <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
+
                 </div>
             </div>
 
-<%--            <div class="mt-3 form-group">--%>
-<%--                <label class="h6" for="customerType">Customer Type:</label>--%>
-<%--                <div class="input-group">--%>
-<%--                    <select id="customerType" class="form-control" name="customerType">--%>
-<%--                        <c:forEach var="customerType" items="${customerTypeList}">--%>
-<%--                            <option value="${customerType.customerTypeId}">${customerType.customerTypeName}</option>--%>
-<%--                        </c:forEach>--%>
-<%--                    </select>--%>
-<%--                    <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>--%>
-<%--                </div>--%>
-<%--            </div>--%>
             <div class="mt-3 form-group">
                 <label for="address" class="h6">Customer Type:</label>
                 <div class="input-group">
-                    <input type="text" id="customerType" value="${customer.getCustomerTypeId()}" class="form-control" placeholder="Input customerType" name="customerType">
-                    <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
+                    <select name="customerType">
+                        <option value="1"${customer.customerTypeId == 1?"selected":""}>Diamond</option>
+                        <option value="2"${customer.customerTypeId == 2?"selected":""}>Platinium</option>
+                        <option value="3"${customer.customerTypeId == 3?"selected":""}>Gold</option>
+                        <option value="4"${customer.customerTypeId == 4?"selected":""}>Silver</option>
+                        <option value="5"${customer.customerTypeId == 5?"selected":""}>Member</option>
+                    </select>
                 </div>
             </div>
 
